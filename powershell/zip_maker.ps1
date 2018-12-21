@@ -26,3 +26,5 @@ if($test -eq 'True'){ echo 'Found Path' }
 
 if($test -eq 'False'){mkdir $outpath 
 echo 'Making Path' }
+
+cd $path
