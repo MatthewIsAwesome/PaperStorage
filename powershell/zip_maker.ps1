@@ -20,9 +20,8 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in KB] -
 '
 
 
-if(![System.IO.File]::Exists($outpath)){
-    mkdir $outpath
-    echo 'Creating Path'
- }
+$test = Test-Path -Path $outpath
 
-
+if($test -eq 'True'){
+    
+}
