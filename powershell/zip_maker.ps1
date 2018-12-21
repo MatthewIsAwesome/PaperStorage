@@ -22,6 +22,7 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in KB] -
 
 $test = Test-Path -Path $outpath
 
-if($test -eq 'True'){
-    
-}
+if($test -eq 'True'){ echo 'Found Path' }
+
+if($test -eq 'False'){mkdir $outpath 
+echo 'Making Path' }
