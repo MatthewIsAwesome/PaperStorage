@@ -9,4 +9,4 @@ Python 3.X (Built in 3.6)
 
 Powershell
 
-1TB RAM
+Plenty of available RAM
