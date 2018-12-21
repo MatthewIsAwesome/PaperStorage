@@ -1,6 +1,8 @@
 # PaperStorage\encode\export.py
 # Plots and stores the data to a picture stored in outpath
 
+import pillow
+
 class exporter(object):
 
     # VARIABLES
