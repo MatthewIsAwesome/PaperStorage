@@ -26,7 +26,7 @@ cd $path
 
 $ls = ls
 $name = $ls.Name
-$size = Get-ChildItem $path -recurse | Measure-Object -property length -sum
+$size = Get-ChildItem $path -recurse | Measure-Object -property length 
 
 
 cd $PSscriptRoot
