@@ -1,6 +1,6 @@
 # INFO.md
 
-## Event Log
+## Info
 
 tests with 0.5mm square sizes are promising
 
