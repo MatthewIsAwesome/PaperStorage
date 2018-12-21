@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-img = mpimg.imread('elfmaker.png')
+img = mpimg.imread('..\\samples\\test8by8.png')
 img = img.tolist()
-# DEBUG: print(img)
+print(img)
 plt.imshow(img)
 plt.show()
 for row in img:
@@ -12,4 +12,3 @@ for row in img:
         for value in pixel:
             if value == 1:
                 blackvalues += 1
-            

@@ -3,24 +3,48 @@
 
 from PIL import Image
 
-class exporter(object):
-
-    # VARIABLES
-    outpath = None
-
-
+class exporter:
     # METHODS
     def __init__(self, arg):
         super(exporter, self).__init__()
         self.arg = arg
+        self.outpath = None
 
-    def encode(path):
+    def _makeTable(binaryString, width=400, height=574):
+        img = Image.new('RGB', (width, height), (0, 0, 255))
+
+        table = [[[]]*height]
+        print()
+        counter = 0
+        rowcounter = counter
+        for bit in binaryString:
+            counter += 1
+            rowcounter += 1
+            if rowcounter > width:
+                height += 1
+                rowcounter = 0
+            table[height].append(bit)
+        # TODO: Make this work
+        print(table) # DEBUG
+        return table
+
+
+
+    def makeBinary(self, path):
+        self.path = path
         pass
         # TODO: Turn into binary
 
-    def makeImg(binaryString):
-        pass
-        # TODO: Draw image and save it... somehow.
+    def makeImg(self, binaryString):
+        self.binaryString = binaryString
+        image = super(exporter, self)._makeTable(binaryString)
+        # TODO: Make this work
+        for x in range(1, width-1):
+            print(x)
+            for y in range(1, height-1):
+                img.putpixel((x, y), tuple(image[x][y]))
+        img.show() # DEBUG
+        # TODO: Save it
 
     def sendImg(path, email):
         pass
