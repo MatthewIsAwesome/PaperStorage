@@ -36,8 +36,8 @@ class exporter(object):
             print(x)
             for y in range(1, height-1):
                 img.putpixel((x, y), tuple(image[x][y]))
-        img.show()
-        # TODO: Draw image and save it... somehow.
+        img.show() # DEBUG
+        # TODO: Save it
 
     def sendImg(path, email):
         pass
