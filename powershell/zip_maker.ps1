@@ -14,7 +14,7 @@ param(
 $usage = '
 Usage:
 
-zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in KB] -debug[True/False]
+zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes] -debug[True/False]
 
 
 '
@@ -28,3 +28,7 @@ if($test -eq 'False'){mkdir $outpath
 echo 'Making Path' }
 
 cd $path
+$name = ls.name
+$size = ls.length
+$join = $name + '' + $size
+if($debug -eq 'true'){echo $join}
