@@ -31,9 +31,17 @@ $name = $ls.Name
 
 $path = D:\School\English
 
-Get-ChildItem $path | ForEach-Object{
-    $size += Get-ItemProperty.length 
-}
+$FileList = Get-ChildItem -LiteralPath $path -File
+
+$Results = foreach ($FL_Item in $FileList)
+    {
+    [PSCustomObject]@{
+        Name = $FL_Item.Name
+        Size_KB = '{0,7:N2}' -f ($FL_Item.Length / 1KB)
+        }
+    }
+
+$Results
 
 
 
