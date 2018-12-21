@@ -16,7 +16,7 @@ using matplotlib on decode ram issues are prevalent
 - [x] Start
 - [x] Folder Structure
 - [x] Start Work on Encode
-- [] Command Line based -s on Encode
+- [ ] Command Line based -s on Encode
 
-- [] Start work on Decode
-- [] matplotlib in automated system
+- [ ] Start work on Decode
+- [ ] matplotlib in automated system
