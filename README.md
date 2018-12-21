@@ -2,7 +2,7 @@
 
 A system to encode files to paper and then decode them with a scanner
 
-###Event Log
+## Event Log
 
 tests with 0.5mm square sizes are promising
 
