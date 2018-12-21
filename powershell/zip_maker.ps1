@@ -26,10 +26,12 @@ cd $path
 
 $ls = ls
 $name = $ls.Name
-$size = $ls.Length
+$size = Get-ChildItem $path -recurse | Measure-Object -property length -sum
 
 
+cd $PSscriptRoot
 
-$join = $name + '' + $size
+
 if($debug -eq 'true'){echo $join}
-$join | Out-File '$($PSScriptRoot)\tmp\lstable.txt'
+echo $name #debug
+$name | Out-File '$($PSScriptRoot)\tmp\lstable.txt'
