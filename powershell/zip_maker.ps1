@@ -1,1 +1,5 @@
-﻿
+﻿param(
+[string]$path
+
+
+)
