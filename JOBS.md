@@ -1,11 +1,15 @@
 # JOBS.md
 
-## ToDo
+## TODOs
 
 - [x] Start
 - [x] Folder Structure
 - [x] Start Work on Encode
-- [x] Command Line based -s on Encode
-
+- [ ] Command Line based -s on Encode
+- [ ] Sort data
+- [ ] Encode to image
+- [ ] Send to print
+- [ ] Finish Encode
 - [ ] Start work on Decode
-- [ ] matplotlib in automated system
+- [ ] Accurately find squares
+- [ ] Create GUI
