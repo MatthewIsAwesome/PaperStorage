@@ -14,12 +14,29 @@ class exporter(object):
         super(exporter, self).__init__()
         self.arg = arg
 
+    def _makeTable(lst, width=400, height=574):
+
+        img = Image.new('RGB', (width, height), (0, 0, 255))
+
+        Image = list()
+        # TODO: Make this work
+
+        return
+
+
+
     def encode(path):
         pass
         # TODO: Turn into binary
 
     def makeImg(binaryString):
-        pass
+        image = _makeTable(binaryString)
+        # TODO: Make this work
+        for x in range(1, width-1):
+            print(x)
+            for y in range(1, height-1):
+                img.putpixel((x, y), tuple(image[x][y]))
+        img.show()
         # TODO: Draw image and save it... somehow.
 
     def sendImg(path, email):
