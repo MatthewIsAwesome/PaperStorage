@@ -1,4 +1,9 @@
 import matplotlib
 import sys
 
-print(sys.argv) 
+args = sys.argv
+
+for arg in args:
+    if arg[0] == "-":
+        if arg[1] == "-":
+            #
