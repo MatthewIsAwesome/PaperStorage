@@ -42,13 +42,3 @@ $Results = foreach ($FL_Item in $FileList)
     }
 
 $Results
-
-
-
-
-cd $PSscriptRoot
-
-
-if($debug -eq 'true'){echo $join}
-echo $name #debug
-$name | Out-File '$($PSScriptRoot)\tmp\lstable.txt'
