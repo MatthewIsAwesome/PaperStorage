@@ -14,13 +14,22 @@ class exporter(object):
         super(exporter, self).__init__()
         self.arg = arg
 
-    def _makeTable(lst, width=400, height=574):
+    def _makeTable(binaryString, width=400, height=574):
 
         img = Image.new('RGB', (width, height), (0, 0, 255))
 
-        Image = list()
-        # TODO: Make this work
+        table = [[[]]*10]
+        print()
+        counter = 0
+        rowcounter = counter
+        for bit in binaryString:
+            counter += 1
+            rowcounter += 1
+            if rowcounter > width:
+                height += 1
+                rowcounter = 0
 
+        # TODO: Make this work
         return
 
 
