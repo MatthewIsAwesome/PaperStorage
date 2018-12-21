@@ -41,4 +41,5 @@ $Results = foreach ($FL_Item in $FileList)
         }
     }
 
-$Results
+Remove-Item -Path \tmp\sizes.csv -Force -ErrorAction SilentlyContinue
+$Results | Out-File -FilePath '\tmp' sizes.csv
