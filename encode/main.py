@@ -1,8 +1,7 @@
 # PaperStaorage\encode\main.py
 # The mainframe for encoding data
 
-usage =
-'''
+usage = '''
 (Square brackets [] indicate an input field the text inside describes how it should be used)
 
 sudo python main.py -p [path to folder containing files for encoding] -o [path for images to be outputted to]
@@ -19,16 +18,16 @@ import export
 debuggers = True # Are debuggers are active? Please MANUALLY change this to False when ALL debuggers are removed and vise versa.
 
 if debuggers:
-    print("Debuggers are active.")
+    print("INFO: Debuggers are active.\n-----")
 
 # GENERAL FUNCTIONS
 def _delchar(string, charPos):
     # Deletes a character of a string
-    print(string)
+    # DEBUG: print(string)
     string = list(string)
     del string[charPos]
     string = "".join(string)
-    print(string) # DEBUG
+    # DEBUG: print(string)
     return string
 
 # FUNCTIONS TO ACTIVATE OTHER SCRIPTS
@@ -36,13 +35,15 @@ def path(pathName):
     # TODO: activate seperate file
     print("path is {}".format(pathName)) # DEBUG
 
-# DECODE ARGUMENTS
+# DECODE ARGS
 args = sys.argv
 # DEBUG: print(args)
 currentArg = 0
+nextArg = currentArg + 1
 try:
     for arg in args:
-        print("current arg is {} at position {}".format(arg, currentArg)) # DEBUG
+        # DEBUG: print("current arg is {} at position {}".format(arg, currentArg)) # DEBUG
+        #print(args)
         if arg[0] == "-": # Checks for a tack in the first position for tags
             arg = _delchar(arg, 0) # Removes the tag from the arg
             # DEBUG: print(arg)
@@ -51,17 +52,20 @@ try:
                 # DEBUG: print(arg)
 
                 if arg == "path":
-                    path(arg[currentArg+1])
+                    path(args[nextArg])
 
                 if arg == "outpath":
                     pass
             else:
                 if arg == "p":
-                    path(arg[currentArg+1])
+                    path(args[nextArg])
 
                 if arg == "o":
                     pass
         currentArg += 1
+        nextArg = currentArg + 1
 
-except IndexError as e:
-    print("IGNORING ERROR: Missing arg for a tag."+str(e))
+except ValueError:
+    pass
+#except IndexError as e:
+#    print("IGNORING ERROR: Missing arg for a tag."+str(e))
