@@ -7,6 +7,6 @@ Python 3.X (Built in 3.6)
  - matplotlib installed (`pip install matplotlib`)
  - Python Imaging Library installed (`pip install pillow`)
 
-Windows 10 (With Powershell)
+Powershell
 
 1TB RAM
