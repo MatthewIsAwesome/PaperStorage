@@ -3,22 +3,17 @@
 
 from PIL import Image
 
-class exporter(object):
-
-    # VARIABLES
-    outpath = None
-
-
+class exporter:
     # METHODS
     def __init__(self, arg):
         super(exporter, self).__init__()
         self.arg = arg
+        self.outpath = None
 
     def _makeTable(binaryString, width=400, height=574):
-
         img = Image.new('RGB', (width, height), (0, 0, 255))
 
-        table = [[[]]*10]
+        table = [[[]]*height]
         print()
         counter = 0
         rowcounter = counter
@@ -28,18 +23,21 @@ class exporter(object):
             if rowcounter > width:
                 height += 1
                 rowcounter = 0
-
+            table[height].append(bit)
         # TODO: Make this work
-        return
+        print(table) # DEBUG
+        return table
 
 
 
-    def encode(path):
+    def makeBinary(self, path):
+        self.path = path
         pass
         # TODO: Turn into binary
 
-    def makeImg(binaryString):
-        image = super()._makeTable(binaryString)
+    def makeImg(self, binaryString):
+        self.binaryString = binaryString
+        image = super(exporter, self)._makeTable(binaryString)
         # TODO: Make this work
         for x in range(1, width-1):
             print(x)
