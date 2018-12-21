@@ -1,15 +1,27 @@
 # PaperStaorage\encode\main.py
-# Called from terminal with tags -p or --path for the file path, -o or --outpath for the output path,
 # The mainframe for encoding data
+
+usage =
+'''
+(Square brackets [] indicate an input field the text inside describes how it should be used)
+
+sudo python main.py -p [path to folder containing files for encoding] -o [path for images to be outputted to]
+
+Can also be used with full words as below.
+sudo python main.py --path [path to folder containing files for encoding] --outpath [path for images to be outputted to]
+
+'''
 
 import matplotlib
 import sys
+import export
 
 debuggers = True # Are debuggers are active? Please MANUALLY change this to False when ALL debuggers are removed and vise versa.
 
 if debuggers:
     print("Debuggers are active.")
 
+# GENERAL FUNCTIONS
 def _delchar(string, charPos):
     # Deletes a character of a string
     print(string)
@@ -19,12 +31,12 @@ def _delchar(string, charPos):
     print(string) # DEBUG
     return string
 
-
+# FUNCTIONS TO ACTIVATE OTHER SCRIPTS
 def path(pathName):
     # TODO: activate seperate file
     print("path is {}".format(pathName)) # DEBUG
 
-
+# DECODE ARGUMENTS
 args = sys.argv
 # DEBUG: print(args)
 currentArg = 0
