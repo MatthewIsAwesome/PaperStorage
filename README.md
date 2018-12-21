@@ -11,7 +11,6 @@ We could in mono options get 0.5mb on each side and with color this could be **t
 
 ## ToDo
 
--[x] Start
--[x] Folder Structure
--[x] Start Work on Encode
- 
+- [x] Start
+- [x] Folder Structure
+- [x] Start Work on Encode
