@@ -1,6 +1,4 @@
-import csv
 import matplotlib
-import os
+import sys
 
-
-path = ("")
+print(sys.argv) 
