@@ -1,3 +1,7 @@
+# PaperStaorage\encode\main.py
+# Called from terminal with tags -p or --path for the file path, -o or --outpath for the output path,
+# The mainframe for encoding data
+
 import matplotlib
 import sys
 
@@ -29,10 +33,10 @@ try:
         print("current arg is {} at position {}".format(arg, currentArg)) # DEBUG
         if arg[0] == "-": # Checks for a tack in the first position for tags
             arg = _delchar(arg, 0) # Removes the tag from the arg
-            #print(arg) # DEBUG
+            # DEBUG: print(arg)
             if arg[0] == "-": # Checks for a tack in the second position of string for whole word tags
                 arg = _delchar(arg, 0)
-                #print(arg) # DEBUG
+                # DEBUG: print(arg)
 
                 if arg == "path":
                     path(arg[currentArg+1])
