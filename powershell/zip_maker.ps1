@@ -1,8 +1,16 @@
 ﻿
 param(
+    
+    [Parameter(Mandatory=$true)]
     [string]$path,
+    
+    [Parameter(Mandatory=$true)]
     [string]$outpath,
+    
+    [Parameter(Mandatory=$true)]
     [int32]$maxsize,
+    
+    
     [boolean]$debug
 )
 
