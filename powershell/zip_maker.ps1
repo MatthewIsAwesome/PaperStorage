@@ -24,9 +24,18 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes
 
 cd $path
 
+$array = @()
+
 $ls = ls
 $name = $ls.Name
-$size = Get-ChildItem $path -recurse | Measure-Object -property length 
+
+$path = D:\School\English
+
+Get-ChildItem $path | ForEach-Object{
+    $size += Get-ItemProperty.length 
+}
+
+
 
 
 cd $PSscriptRoot
