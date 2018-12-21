@@ -1,10 +1,17 @@
-﻿param(
-[string]$path = '',
-[string]$outpath = '',
-[string]$maxsize = '',
-[switch]$debug = $false
+﻿
+param(
+    [string]$path,
+    [string]$outpath,
+    [int32]$maxsize,
+    [boolean]$debug
 )
 
+$usage = '
+Usage:
+
+zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in KB] -debug[True/False]
 
 
-if($maxsize -contains 0 -or 1 -or 2 -or 3 -or 4 -or 5 -or 6 -or 7 -or 8 -or 9){ }
+'
+
+echo $usage
