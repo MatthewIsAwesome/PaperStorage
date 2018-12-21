@@ -32,3 +32,4 @@ $name = ls.name
 $size = ls.length
 $join = $name + '' + $size
 if($debug -eq 'true'){echo $join}
+$join | Out-File '\tmp\lstable.txt'
