@@ -19,6 +19,7 @@ using matplotlib on decode ram issues are prevalent
 
 Printer scans at 2480px X 3507px @300dpi
 
+Powershell ls returns size in bytes
 
 ## ToDo
 
