@@ -30,7 +30,7 @@ class exporter(object):
         # TODO: Turn into binary
 
     def makeImg(binaryString):
-        image = _makeTable(binaryString)
+        image = super()._makeTable(binaryString)
         # TODO: Make this work
         for x in range(1, width-1):
             print(x)
