@@ -1,6 +1,11 @@
 import matplotlib
 import sys
 
+debugers = True # Are debuggers are active? Please MANUALLY change this to False when ALL debuggers are removed and vise versa.
+
+if debuggers:
+    print("Debuggers are active.")
+
 def _delchar(string, charPos):
     # Deletes a character of a string
     string = list(string)
@@ -22,7 +27,7 @@ try:
         if arg[0] == "-": # Checks for a tack in the first position for tags
             arg = _delchar(arg, 0) # Removes the tag from the arg
 
-            if arg[1] == "-": # Checks for a tack in the second position of string for whole word tags
+            if arg[0] == "-": # Checks for a tack in the second position of string for whole word tags
                 arg = _delchar(arg, 0)
 
                 if arg == "path":
@@ -36,7 +41,7 @@ try:
 
                 if arg == "o":
                     pass
-    currentArg += 1
+        currentArg += 1
 
 except IndexError as e:
     print("IGNORING ERROR: Missing arg for a tag."+str(e))
