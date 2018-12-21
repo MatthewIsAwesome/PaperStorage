@@ -8,10 +8,7 @@ param(
     [string]$outpath,
     
     [Parameter(Mandatory=$true)]
-    [int32]$maxsize,
-    
-    
-    [boolean]$debug
+    [int32]$maxsize
 )
 
 $usage = '
@@ -22,4 +19,8 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in KB] -
 
 '
 
-echo $usage
+
+if(![System.IO.File]::Exists($outpath)){
+
+
+ }
