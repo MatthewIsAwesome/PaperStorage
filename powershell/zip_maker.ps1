@@ -1,5 +1,4 @@
-﻿
-param(
+﻿param(
     
     [Parameter(Mandatory=$true)]
     [string]$path,
@@ -23,12 +22,9 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes
 '
 
 
-cd $path
 
 $array = @()
 
-$ls = ls
-$name = $ls.Name
 
 #debug
 #$path = D:\School\English
@@ -45,4 +41,4 @@ $Results = foreach ($FL_Item in $FileList)
 
 Remove-Item -Path \tmp\sizes.csv -Force -ErrorAction SilentlyContinue
 echo $Results
-$Results | Export-Csv -Delimiter ',' -Path $PSScriptRoot\tmp
+$Results | Export-Csv 'results.csv' -Delimiter ',' -Path $PSScriptRoot\tmp -Confirm -Force -Debug
