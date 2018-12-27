@@ -6,13 +6,12 @@ from PIL import Image
 class exporter(object):
     def __init__(self):
         self.outpath = None
+        self.black = (0, 0, 0)
+        self.white = (255, 255, 255)
 
     def _makeTable(self, binaryString, width=400, height=574):
         exampleresult = [[["101101111000"], ["101101111111"]], 12, 2]
         return exampleresult # DEBUG
-
-
-        img = Image.new('RGB', (width, height), (0, 0, 255))
 
         table = [[[]]*height]
         print()
@@ -37,14 +36,22 @@ class exporter(object):
 
     def makeImg(self, binaryString):
         self.binaryString = binaryString
-        image = self._makeTable(binaryString)
-        width = image[1]
-        height = image[2]
-        # TODO: Make this work
-        for x in range(1, width-1):
-            print(x)
-            for y in range(1, height-1):
-                img.putpixel((x, y), tuple(image[0][x][y]))
+        table = self._makeTable(binaryString)
+        width = table[1]
+        height = table[2]
+        img = Image.new('RGB', (width, height), (0, 0, 255))
+        print(width)
+        print(height)
+        for y in range(height):
+            # print(x)
+            for x in range(width):
+                if table[0][y][x] == "1":
+                    img.putpixel((x, y), black)
+                elif table[0][y][x] == "0":
+                    img.putpixel((x, y), white)
+                else:
+                    raise ValueError("Illegal value in binaryString: "+table[0][y][x])
+                print(str(x)+", "+str(y)) # DEBUG
         img.show() # DEBUG
         # TODO: Save it
 
