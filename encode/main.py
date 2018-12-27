@@ -67,6 +67,6 @@ try:
         nextArg = currentArg + 1
 
 except ValueError:
-    pass
+    print("IGNORING ValueError")
 #except IndexError as e:
 #    print("IGNORING ERROR: Missing arg for a tag."+str(e))

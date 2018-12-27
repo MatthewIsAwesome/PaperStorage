@@ -1,6 +1,6 @@
 # JOBS.md
 
-## Code Done
+## Code Done (Lines)
 @MatthewIsAwesome : 160
 @3tch_a_sketch : 45
 
