@@ -10,7 +10,7 @@ class exporter(object):
         self.white = (255, 255, 255)
 
     def _makeTable(self, binaryString, width=400, height=574):
-        exampleresult = [[["101101111000"], ["101101111111"]], 12, 2]
+        exampleresult = [["101101111000", "101101111111"], 12, 2]
         return exampleresult # DEBUG
 
         table = [[[]]*height]
@@ -46,9 +46,9 @@ class exporter(object):
             # print(x)
             for x in range(width):
                 if table[0][y][x] == "1":
-                    img.putpixel((x, y), black)
+                    img.putpixel((x, y), self.black)
                 elif table[0][y][x] == "0":
-                    img.putpixel((x, y), white)
+                    img.putpixel((x, y), self.white)
                 else:
                     raise ValueError("Illegal value in binaryString: "+table[0][y][x])
                 print(str(x)+", "+str(y)) # DEBUG
