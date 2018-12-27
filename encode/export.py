@@ -21,7 +21,7 @@ class exporter(object):
                 heightcounter += 1
             print("row: "+str(rowcounter))
             print("column: "+str(heightcounter))
-            table[height].append(bit)
+            table[heightcounter].append(bit)
         # TODO: Make this work
         print(table) # DEBUG
         return [table, width, height]
