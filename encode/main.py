@@ -12,9 +12,7 @@ Can also be used with full words as below.
 
 '''
 
-import matplotlib
-import sys
-import export
+import matplotlib, sys, export
 
 debuggers = True # Are debuggers are active? Please MANUALLY change this to False when ALL debuggers are removed and vise versa.
 
