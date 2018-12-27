@@ -1,4 +1,4 @@
-# PaperStorage\encode\export.py
+# Pa    perStorage\encode\export.py
 # Plots and stores the data to a picture stored in outpath
 
 from PIL import Image
