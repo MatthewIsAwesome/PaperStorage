@@ -11,7 +11,6 @@ class exporter(object):
 
     def _makeTable(self, binaryString, width=400, height=574):
         table = [[[]]*height]
-        print(table)
         heightcounter = 0
         rowcounter = 0
         for bit in binaryString:
@@ -21,7 +20,7 @@ class exporter(object):
                 heightcounter += 1
             print("row: "+str(rowcounter))
             print("column: "+str(heightcounter))
-            table[heightcounter].append(bit)
+            table[0][heightcounter].append(bit)
         # TODO: Make this work
         print(table) # DEBUG
         return [table, width, height]
