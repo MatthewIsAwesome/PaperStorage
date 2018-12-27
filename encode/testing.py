@@ -1,4 +1,4 @@
 # TEMP
 import export
-e = export.exporter
-e.makeImg(binaryString = "10111001")
+e = export.exporter()
+e.makeImg("10111001")

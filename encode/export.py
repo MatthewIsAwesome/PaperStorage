@@ -4,13 +4,14 @@
 from PIL import Image
 
 class exporter(object):
-    # METHODS
-    def __init__(self, arg, outpath ):
-        super(exporter, self).__init__()
-        self.arg = arg
+    def __init__(self):
+        # Boilerplate code i'm sure isn't important... super(exporter, self).__init__()
         self.outpath = None
 
     def _makeTable(self, binaryString, width=400, height=574):
+        return exampleresult # DEBUG
+
+
         img = Image.new('RGB', (width, height), (0, 0, 255))
 
         table = [[[]]*height]
@@ -26,23 +27,24 @@ class exporter(object):
             table[height].append(bit)
         # TODO: Make this work
         print(table) # DEBUG
-        return table
+        return [table, width, height]
 
 
 
     def makeBinary(self, path):
         self.path = path
-        pass
         # TODO: Turn into binary
 
     def makeImg(self, binaryString):
         self.binaryString = binaryString
-        image = super(exporter, self)._makeTable(binaryString)
+        image = self._makeTable(binaryString)
+        width = image[1]
+        height = image[2]
         # TODO: Make this work
         for x in range(1, width-1):
             print(x)
             for y in range(1, height-1):
-                img.putpixel((x, y), tuple(image[x][y]))
+                img.putpixel((x, y), tuple(image[0][x][y]))
         img.show() # DEBUG
         # TODO: Save it
 
