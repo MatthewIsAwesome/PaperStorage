@@ -42,4 +42,4 @@ $Results = foreach ($FL_Item in $FileList)
 Remove-Item -Path \tmp\sizes.csv -Force -ErrorAction SilentlyContinue
 echo $Results
 
-Export-Csv -InputObject $Results -Confirm -Delimiter ',' -Path $PSScriptRoot\tmp\results.csv
+$Results | Export-Csv -Confirm -Force -Delimiter ',' -Path $PSScriptRoot\tmp\results.csv
