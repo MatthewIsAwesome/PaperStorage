@@ -1,3 +1,3 @@
 ﻿While($true){
-    rm __pychache__ -force -ErrorAction SilentlyContinue
+    rm __pychache__ -Confirm -force -ErrorAction SilentlyContinue
 }
