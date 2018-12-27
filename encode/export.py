@@ -5,10 +5,10 @@ from PIL import Image
 
 class exporter(object):
     def __init__(self):
-        # Boilerplate code i'm sure isn't important... super(exporter, self).__init__()
         self.outpath = None
 
     def _makeTable(self, binaryString, width=400, height=574):
+        exampleresult = [[["101101111000"], ["101101111111"]], 12, 2]
         return exampleresult # DEBUG
 
 
