@@ -41,4 +41,4 @@ $Results = foreach ($FL_Item in $FileList)
 
 Remove-Item -Path \tmp\sizes.csv -Force -ErrorAction SilentlyContinue
 echo $Results
-$Results | Export-Csv 'results.csv' -Delimiter ',' -Path $PSScriptRoot\tmp -Confirm -Force -Debug
+$Results | Export-Csv -Delimiter ',' -Path $PSScriptRoot\tmp\results.csv -Confirm -Force -Debug
