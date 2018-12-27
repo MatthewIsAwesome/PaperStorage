@@ -10,7 +10,8 @@ class exporter(object):
         self.white = (255, 255, 255)
 
     def _makeTable(self, binaryString, width=400, height=574):
-        table = [[[]]*height]
+        table = [[]]*height
+        print(table)
         heightcounter = 0
         rowcounter = 0
         for bit in binaryString:
@@ -33,7 +34,7 @@ class exporter(object):
 
     def makeImg(self, binaryString):
         self.binaryString = binaryString
-        table = self._makeTable(binaryString)
+        table = self._makeTable(binaryString, 16, 2)
         width = table[1]
         height = table[2]
         img = Image.new('RGB', (width, height), (0, 0, 255))
@@ -47,6 +48,8 @@ class exporter(object):
                 elif table[0][y][x] == "0":
                     img.putpixel((x, y), self.white)
                 else:
+                    print(table[0][y][x])
+                    print(table[0])
                     raise ValueError("Illegal value in binaryString: "+table[0][y][x])
                 print(str(x)+", "+str(y)) # DEBUG
         img.show() # DEBUG
