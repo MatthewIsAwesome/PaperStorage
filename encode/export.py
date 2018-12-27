@@ -10,18 +10,17 @@ class exporter(object):
         self.white = (255, 255, 255)
 
     def _makeTable(self, binaryString, width=400, height=574):
-        exampleresult = [["101101111000", "101101111111"], 12, 2]
-        return exampleresult # DEBUG
-
         table = [[[]]*height]
-        counter = 0
-        rowcounter = counter
+        print(table)
+        heightcounter = 0
+        rowcounter = 0
         for bit in binaryString:
-            counter += 1
             rowcounter += 1
             if rowcounter > width:
-                height += 1
                 rowcounter = 0
+                heightcounter += 1
+            print("row: "+str(rowcounter))
+            print("column: "+str(heightcounter))
             table[height].append(bit)
         # TODO: Make this work
         print(table) # DEBUG
