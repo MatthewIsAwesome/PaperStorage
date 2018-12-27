@@ -14,7 +14,6 @@ class exporter(object):
         return exampleresult # DEBUG
 
         table = [[[]]*height]
-        print()
         counter = 0
         rowcounter = counter
         for bit in binaryString:
