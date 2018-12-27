@@ -1,5 +1,9 @@
 # JOBS.md
 
+## Code Done
+@MatthewIsAwesome : 160
+@3tch_a_sketch : 45
+
 ## TODOs
 
 - [x] Start

@@ -3,14 +3,14 @@
 
 from PIL import Image
 
-class exporter:
+class exporter(object):
     # METHODS
-    def __init__(self, arg):
+    def __init__(self, arg, outpath ):
         super(exporter, self).__init__()
         self.arg = arg
         self.outpath = None
 
-    def _makeTable(binaryString, width=400, height=574):
+    def _makeTable(self, binaryString, width=400, height=574):
         img = Image.new('RGB', (width, height), (0, 0, 255))
 
         table = [[[]]*height]
