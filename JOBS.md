@@ -9,9 +9,9 @@
 - [x] Start
 - [x] Folder Structure
 - [x] Start Work on Encode
-- [ ] Command Line based -s on Encode
+- [x] Command Line based -s on Encode
 - [ ] Sort data
-- [ ] Encode to image
+- [x] Encode to image
 - [ ] Send to print
 - [ ] Finish Encode
 - [ ] Start work on Decode
