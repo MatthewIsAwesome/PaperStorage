@@ -11,6 +11,7 @@ class exporter(object):
 
     def makeTable(self, binaryString, width=400, height=574):
         table = tuple()
+        
         print(table) # DEBUG
         binaryStringCount = 0
         for y in range(height):
