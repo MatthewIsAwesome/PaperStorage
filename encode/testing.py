@@ -1,4 +1,5 @@
 # TEMP
 import export
 e = export.exporter()
-e.makeImg("10111001")
+e.makeImg("101")
+# 1100111010101010111
