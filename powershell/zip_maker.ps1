@@ -23,6 +23,7 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes
 
 Remove-Item $PSScriptRoot\tmp\maxlen.ini -Force -ErrorAction SilentlyContinue
 
+
 $array = @()
 
 
@@ -44,3 +45,5 @@ echo $Results
 
 $Results | Export-Csv -Confirm -Force -Delimiter % -Path $PSScriptRoot\tmp\results.csv
 $maxsize | Out-File  -Path $PSScriptRoot\tmp\maxlen.ini -Force
+
+$match = 
