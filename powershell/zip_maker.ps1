@@ -1,11 +1,11 @@
 ﻿param(
-    
+
     [Parameter(Mandatory=$true)]
     [string]$path,
-    
+
     [Parameter(Mandatory=$true)]
     [string]$outpath,
-    
+
     [Parameter(Mandatory=$true)]
     [int32]$maxsize,
 
@@ -39,7 +39,7 @@ $Results = foreach ($FL_Item in $FileList)
         }
     }
 
-Remove-Item -Path \tmp\sizes.csv -Force -ErrorAction SilentlyContinue
+Remove-Item -Path \CSV\sizes.csv -Force -ErrorAction SilentlyContinue
 echo $Results
 
-$Results | Export-Csv -Confirm -Force -Delimiter % -Path $PSScriptRoot\tmp\results.csv
+$Results | Export-Csv -Confirm -Force -Delimiter % -Path $PSScriptRoot\CSV\results.csv
