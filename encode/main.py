@@ -1,7 +1,7 @@
 # PaperStaorage\encode\main.py
 # The mainframe for encoding data
 
-usage = '''
+USAGE = '''
 call this script in powershell, cmd or bash (in admin mode where applicable)
 (Square brackets [] indicate an input field the text inside describes how it should be used)
 
