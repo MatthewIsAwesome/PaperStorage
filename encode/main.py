@@ -9,7 +9,6 @@ call this script in powershell, cmd or bash (in admin mode where applicable)
 
 Can also be used with full words as below.
 (sudo) python main.py --path [path to folder containing files for encoding] --outpath [path for images to be outputted to]
-
 '''
 
 import matplotlib, sys, export
