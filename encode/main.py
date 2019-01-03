@@ -1,7 +1,7 @@
 # PaperStaorage\encode\main.py
 # The mainframe for encoding data
 
-usage = '''
+USAGE = '''
 call this script in powershell, cmd or bash (in admin mode where applicable)
 (Square brackets [] indicate an input field the text inside describes how it should be used)
 
@@ -9,12 +9,9 @@ call this script in powershell, cmd or bash (in admin mode where applicable)
 
 Can also be used with full words as below.
 (sudo) python main.py --path [path to folder containing files for encoding] --outpath [path for images to be outputted to]
-
 '''
 
-import matplotlib
-import sys
-import export
+import matplotlib, sys, export
 
 debuggers = True # Are debuggers are active? Please MANUALLY change this to False when ALL debuggers are removed and vise versa.
 
@@ -44,7 +41,7 @@ nextArg = currentArg + 1
 try:
     for arg in args:
         # DEBUG: print("current arg is {} at position {}".format(arg, currentArg)) # DEBUG
-        #print(args)
+        # DEBUG: print(args) # DEBUG
         if arg[0] == "-": # Checks for a tack in the first position for tags
             arg = _delchar(arg, 0) # Removes the tag from the arg
             # DEBUG: print(arg)
