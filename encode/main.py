@@ -41,7 +41,7 @@ nextArg = currentArg + 1
 try:
     for arg in args:
         # DEBUG: print("current arg is {} at position {}".format(arg, currentArg)) # DEBUG
-        #print(args)
+        # DEBUG: print(args) # DEBUG
         if arg[0] == "-": # Checks for a tack in the first position for tags
             arg = _delchar(arg, 0) # Removes the tag from the arg
             # DEBUG: print(arg)
