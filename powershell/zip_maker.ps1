@@ -21,7 +21,7 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes
 
 '
 
-Remove-Item $PSScriptRoot\tmp\maxlen.ini -Force -ErrorAction SilentlyContinue
+Remove-Item $PSScriptRoot\csv\maxlen.ini -Force -ErrorAction SilentlyContinue
 
 
 $array = @()
@@ -40,10 +40,10 @@ $Results = foreach ($FL_Item in $FileList)
         }
     }
 
-Remove-Item -Path \tmp\sizes.csv -Force -ErrorAction SilentlyContinue
+Remove-Item -Path \csv\sizes.csv -Force -ErrorAction SilentlyContinue
 echo $Results
 
-$Results | Export-Csv -Confirm -Force -Delimiter % -Path $PSScriptRoot\tmp\results.csv
-$maxsize | Out-File  -Path $PSScriptRoot\tmp\maxlen.ini -Force
+$Results | Export-Csv -Confirm -Force -Delimiter % -Path $PSScriptRoot\csv\results.csv
+$maxsize | Out-File  -Path $PSScriptRoot\csv\maxlen.ini -Force
 
 $match = 
