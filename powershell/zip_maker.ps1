@@ -1,5 +1,4 @@
 ﻿param(
-
     [Parameter(Mandatory=$true)]
     [string]$path,
 
@@ -14,21 +13,14 @@
 
 $usage = '
 Usage:
-
 zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes] -debugger[True/False]
-
-
-
 '
 
 Remove-Item $PSScriptRoot\tmp\maxlen.ini -Force -ErrorAction SilentlyContinue
 
-
 $array = @()
 
-
-#debug
-#$path = D:\School\English
+# DEBUG: $path = D:\School\English
 
 $FileList = Get-ChildItem -LiteralPath $path -File
 

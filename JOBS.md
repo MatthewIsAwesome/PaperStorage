@@ -2,7 +2,7 @@
 
 ## Code Done (Lines)
 @MatthewIsAwesome : 178
-@3tch_a_sketch : 45
+@3tch_a_sketch : 39
 
 ## Commits
 @MatthewIsAwesome : 67
