@@ -1,17 +1,19 @@
 # JOBS.md
 
 ## Code Done (Lines)
-@MatthewIsAwesome : 160
+@MatthewIsAwesome : 178
 @3tch_a_sketch : 45
 
-## TODOs
+## Commits
+@MatthewIsAwesome : 67
+@3tch_a_sketch : 66
 
-- [x] Start
+## TODOs
 - [x] Folder Structure
 - [x] Start Work on Encode
 - [x] Command Line based -s on Encode
 - [ ] Sort data
-- [x] Encode to image
+- [ ] Encode to image
 - [ ] Send to print
 - [ ] Finish Encode
 - [ ] Start work on Decode
