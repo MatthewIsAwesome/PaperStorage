@@ -1,3 +1,5 @@
+## READING
+
 import base64
 
 with open('exampleZip.zip','rb') as imageFile:
@@ -6,16 +8,9 @@ with open('exampleZip.zip','rb') as imageFile:
 imageBytes = base64.decodebytes(str)
 imageBinary = "".join(["{:08b}".format(x) for x in imageBytes])
 
-print(imageBinary)
+# DEBUG: print(imageBinary)
 
+## WRITING
 
 with open("duplicatedZip.zip", "wb") as f:
 	f.write(imageBytes)
-
-
-
-
-'''
-	for x in "hello".encode():
-		print(bin(x))
-'''
