@@ -5,8 +5,12 @@ from PIL import Image
 import base64
 
 class exporter(object):
-    def __init__(self):
-        self.outpath = None
+    def __init__(self, outpath):
+        # GLOBALS
+        self.outOfData = False
+        self.binaryStringCount = 0
+        self.page = 0
+        self.outpath = outpath
         self.black = (0, 0, 0)
         self.white = (255, 255, 255)
 
@@ -15,18 +19,19 @@ class exporter(object):
         table = tuple()
 
         # DEBUG: print(table) # DEBUG
-        binaryStringCount = 0
+        # binaryStringCount = 0
         for y in range(height):
             row = tuple()
             for x in range(width):
                 try:
                     # DEBUG: print(binaryString[binaryStringCount])
                     # DEBUG: print(row) # DEBUG
-                    row += tuple(binaryString[binaryStringCount])
+                    row += tuple(binaryString[self.binaryStringCount])
                 except IndexError:
                     row += tuple("0")
+                    self.outOfData = True
                 finally:
-                    binaryStringCount += 1
+                    self.binaryStringCount += 1
                     # DEBUG: print(row) # DEBUG
             # DEBUG: print(row) # DEBUG
             table += (row,) # DON'T REMOVE THESE BRACKETS and comma
@@ -50,7 +55,7 @@ class exporter(object):
 
     def makeImg(self, binaryString):
         self.binaryString = binaryString
-        table = self.makeTable(binaryString, 10, 10) # DEBUG in place thus TODO: Change the values to the correct paper size
+        table = self.makeTable(binaryString) # DEBUG in place thus TODO: Change the values to the correct paper size
         width = table[1]
         height = table[2]
         img = Image.new('RGB', (width, height), (0, 0, 255))
@@ -68,8 +73,9 @@ class exporter(object):
                     # DEBUG: print(table[0])
                     raise ValueError("Illegal value in binaryString: "+table[0][y][x])
                 # print(str(x)+", "+str(y)) # DEBUG
-        img.show() # DEBUG
-        # TODO: Save it
+        # img.show() # DEBUG
+        img.save(self.outpath+"out_"+str(self.page)+".png")
+        self.page += 1
 
     def sendImg(path, email):
         pass
