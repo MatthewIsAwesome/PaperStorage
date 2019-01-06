@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-img = mpimg.imread('..\\samples\\test8by8.png')
+img = mpimg.imread('..\\..\\samples\\test8by8.png')
 img = img.tolist()
 print(img)
 plt.imshow(img)

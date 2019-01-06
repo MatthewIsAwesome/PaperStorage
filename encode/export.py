@@ -2,6 +2,7 @@
 # Plots and stores the data to a picture stored in outpath
 
 from PIL import Image
+import base64
 
 class exporter(object):
     def __init__(self):
@@ -38,7 +39,14 @@ class exporter(object):
 
     def makeBinary(self, path):
         self.path = path
-        # TODO: Turn into binary
+        # NOTE: I do not completely understnad this bit. Credit goes to https://stackoverflow.com/users/6380921/nouman-riaz-khan
+        with open(path, 'rb') as imageFile:
+            str = base64.b64encode(imageFile.read())
+
+        imageBytes = base64.decodebytes(str)
+        imageBinary = "".join(["{:08b}".format(x) for x in imageBytes])
+
+        return imageBinary
 
     def makeImg(self, binaryString):
         self.binaryString = binaryString
@@ -59,7 +67,7 @@ class exporter(object):
                     # DEBUG: print(table[0][y][x])
                     # DEBUG: print(table[0])
                     raise ValueError("Illegal value in binaryString: "+table[0][y][x])
-                #print(str(x)+", "+str(y)) # DEBUG
+                # print(str(x)+", "+str(y)) # DEBUG
         img.show() # DEBUG
         # TODO: Save it
 

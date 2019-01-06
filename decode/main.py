@@ -1,17 +1,19 @@
-# PaperStaorage\encode\main.py
-# The mainframe for encoding data
+# PaperStorage\decode\main.py
+# mainframe for decoding images
+
+import sys
 
 USAGE = '''
 call this script in powershell, cmd or bash (in admin mode where applicable)
 (Square brackets [] indicate an input field the text inside describes how it should be used)
 
-(sudo) python main.py -p [path to folder containing files for encoding] -o [path for images to be outputted to]
+(sudo) python main.py -p [path to folder containing files for decoding] -o [path for .zip file to be outputted to]
 
 Can also be used with full words as below.
-(sudo) python main.py --path [path to folder containing files for encoding] --outpath [path for images to be outputted to]
+(sudo) python main.py --path [path to folder containing files for decoding] --outpath [path for .zip file to be outputted to]
 '''
 
-import matplotlib, sys, export
+import matplotlib, sys, fileHandler
 
 debuggers = True # Are debuggers are active? Please MANUALLY change this to False when ALL debuggers are removed and vise versa.
 
@@ -28,17 +30,13 @@ def _delchar(string, charPos):
     # DEBUG: print(string)
     return string
 
-# FUNCTIONS TO ACTIVATE OTHER SCRIPTS
-def path(pathName):
-    # TODO: activate seperate file
-    print("path is {}".format(pathName)) # DEBUG
-
-
 # DECODE ARGS
 args = sys.argv
 # DEBUG: print(args)
 currentArg = 0
 nextArg = currentArg + 1
+path = None
+outpath = None
 try:
     for arg in args:
         # DEBUG: print("current arg is {} at position {}".format(arg, currentArg)) # DEBUG
@@ -51,20 +49,20 @@ try:
                 # DEBUG: print(arg)
 
                 if arg == "path":
-                    path(args[nextArg])
+                    path = args[nextArg]
 
                 if arg == "outpath":
-                    pass
+                    outpath = args[nextArg]
             else:
                 if arg == "p":
-                    path(args[nextArg])
+                    path = args[nextArg]
 
                 if arg == "o":
-                    pass
+                    outpath = args[nextArg]
         currentArg += 1
         nextArg = currentArg + 1
-
-except ValueError:
-    print("IGNORING ValueError")
-#except IndexError as e:
-#    print("IGNORING ERROR: Missing arg for a tag."+str(e))
+    if outpath == None or path == None:
+        raise IndexError # This isn't ideal but I don't want the program continueing if there missing args
+except IndexError:
+    print("ERROR: Missing argument for a tag.")
+    sys.exit(0)
