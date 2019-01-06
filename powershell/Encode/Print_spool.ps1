@@ -29,7 +29,11 @@ if($mode -eq 2){
         $content = Get-Content
         $content | Out-Printer -Name $outnum
         $outnum += 1
+        Start-Sleep -Milliseconds 10
     }
 
     echo 'process finished'
+}
+if($mode -eq 2){
+    
 }
