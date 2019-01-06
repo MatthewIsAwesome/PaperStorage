@@ -85,7 +85,7 @@ except IndexError:
 
 # DEBUG: print("path: "+path) # DEBUG
 # DEBUG: print("output path: "+outpath) # DEBUG
-print(width+height)
+# print(width+height)
 
 ## ACTUALLY RUNNING IT
 e = export.exporter(outpath)

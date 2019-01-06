@@ -77,7 +77,7 @@ class exporter(object):
                     raise ValueError("Illegal value in binaryString: "+table[0][y][x])
                 # print(str(x)+", "+str(y)) # DEBUG
         # img.show() # DEBUG
-        img.save(self.outpath+"out_"+str(self.page)+".png")
+        img.save(self.outpath+str(self.page)+".png")
         self.page += 1
 
     def sendImg(path, email):
