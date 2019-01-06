@@ -39,6 +39,8 @@ args = sys.argv
 # DEBUG: print(args)
 currentArg = 0
 nextArg = currentArg + 1
+path = None
+outpath = None
 try:
     for arg in args:
         # DEBUG: print("current arg is {} at position {}".format(arg, currentArg)) # DEBUG
@@ -51,20 +53,28 @@ try:
                 # DEBUG: print(arg)
 
                 if arg == "path":
-                    path(args[nextArg])
+                    path = args[nextArg]
 
                 if arg == "outpath":
-                    pass
+                    outpath = args[nextArg]
             else:
                 if arg == "p":
-                    path(args[nextArg])
+                    path = args[nextArg]
 
                 if arg == "o":
-                    pass
+                    outpath = args[nextArg]
         currentArg += 1
         nextArg = currentArg + 1
+    if outpath == None or path == None:
+        raise IndexError # This isn't ideal but I don't want the program continueing if there missing args
+except IndexError:
+    print("ERROR: Missing argument for a tag.")
+    sys.exit(0)
 
-except ValueError:
-    print("IGNORING ValueError")
-#except IndexError as e:
-#    print("IGNORING ERROR: Missing arg for a tag."+str(e))
+print("path: "+path) # DEBUG
+print("output path: "+outpath) # DEBUG
+
+## ACTUALLY RUNNING IT
+e = export.exporter(outpath)
+while e.outOfData == False:
+    e.makeImg(e.makeBinary(path))
