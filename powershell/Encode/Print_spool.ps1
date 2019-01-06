@@ -8,6 +8,13 @@
 
 )
 
+
+$imginp = 'D:\Scholarship Projects\Paper'
+$dest = 'D:\Scholarship Projects\Paper'
+
+
+
+
 $usage = '
 
 modes 1 append save the files into a single file to print elsewhere
@@ -35,5 +42,6 @@ if($mode -eq 2){
     echo 'process finished'
 }
 if($mode -eq 2){
-    
+    echo 'starting compression'
+    Compress-Archive -Path $imginp -DestinationPath $dest
 }
