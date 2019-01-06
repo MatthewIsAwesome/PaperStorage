@@ -24,14 +24,22 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes
 
 '
 
-Remove-Item $PSScriptRoot\tmp\maxlen.ini -Force -ErrorAction SilentlyContinue
+if($bitforbitsplit -eq 0){
+    $bitlog = 'groupmode'
+}else{
+    $bitlog = 'split'
+}
 
+
+Remove-Item $PSScriptRoot\tmp\maxlen.ini -Force -ErrorAction SilentlyContinue
+Remove-Item $PSScriptRoot\tmp\mode.ini -Force -ErrorAction SilentlyContinue
 
 $array = @()
 
 if($bitforbitsplit -eq 1){
     Compress-Archive -DestinationPath $outpath -Path $path -CompressionLevel Optimal -Confirm
-    $PSScriptRoot\tmp
+    $bitlog | Out-File -FilePath $PSScriptRoot\tmp\mode.ini
+    echo 'File Compression Finished‽'
 }else{
 
 
