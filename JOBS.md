@@ -14,11 +14,12 @@
 - [x] Command Line based -s on Encode
 - [x] Sort data
 - [x] Encode to images
-- [ ] Save images
-- [ ] Send to print
+- [x] Save images
+- [ ] Send to print    I did everything above this on the list but Etch still hasn't done this by the time I did everything prior... *sighs*
 - [ ] Finish Encode
 - [x] Start work on Decode
 - [ ] Accurately find squares
 - [ ] Find binary from images
 - [ ] Turn binary into file
-- [ ] Create GUI
+- [ ] Finish Decode
+- [ ] Create GUI *- undecided how... either python TK, PowerShell or Java*
