@@ -7,6 +7,7 @@ import base64
 class exporter(object):
     def __init__(self, outpath):
         # GLOBALS
+        self.imagedimensions = (400, 574)
         self.outOfData = False
         self.binaryStringCount = 0
         self.page = 0
@@ -14,7 +15,7 @@ class exporter(object):
         self.black = (0, 0, 0)
         self.white = (255, 255, 255)
 
-    def makeTable(self, binaryString, width=400, height=574):
+    def makeTable(self, binaryString, width=self.imagedimensions[0], height=self.imagedimensions[1]):
         self.binaryString = binaryString
         table = tuple()
 
