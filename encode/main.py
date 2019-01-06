@@ -5,10 +5,10 @@ USAGE = '''
 call this script in powershell, cmd or bash (in admin mode where applicable)
 (Square brackets [] indicate an input field the text inside describes how it should be used)
 
-(sudo) python main.py -p [path to folder containing files for encoding] -o [path for images to be outputted to]
+(sudo) python main.py -p [path to folder containing files for encoding] -o [path for images to be outputted to] (-x [width of output in pixels] -y [height of output in pixels])
 
 Can also be used with full words as below.
-(sudo) python main.py --path [path to folder containing files for encoding] --outpath [path for images to be outputted to]
+(sudo) python main.py --path [path to folder containing files for encoding] --outpath [path for images to be outputted to] (--width [width of output in pixels] --height [height of output in pixels])
 '''
 
 import matplotlib, sys, export
@@ -57,12 +57,24 @@ try:
 
                 if arg == "outpath":
                     outpath = args[nextArg]
+
+                if arg == "width":
+                    width = args[nextArg]
+
+                if arg == "height":
+                    height = args[nextArg]
             else:
                 if arg == "p":
                     path = args[nextArg]
 
                 if arg == "o":
                     outpath = args[nextArg]
+
+                if arg == "x":
+                    width = args[nextArg]
+
+                if arg == "y":
+                    height = args[nextArg]
         currentArg += 1
         nextArg = currentArg + 1
     if outpath == None or path == None:
@@ -71,10 +83,17 @@ except IndexError:
     print("ERROR: Missing argument for a tag.")
     sys.exit(0)
 
-print("path: "+path) # DEBUG
-print("output path: "+outpath) # DEBUG
+# DEBUG: print("path: "+path) # DEBUG
+# DEBUG: print("output path: "+outpath) # DEBUG
+print(width+height)
 
 ## ACTUALLY RUNNING IT
 e = export.exporter(outpath)
+
+try:
+    e.imagedimensions = (int(width), int(height))
+except error:
+    print("INFO: using default size for output")
+
 while e.outOfData == False:
     e.makeImg(e.makeBinary(path))
