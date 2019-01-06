@@ -31,7 +31,7 @@ $array = @()
 
 if($bitforbitsplit -eq 1){
     Compress-Archive -DestinationPath $outpath -Path $path -CompressionLevel Optimal -Confirm
-
+    $PSScriptRoot\tmp
 }else{
 
 
