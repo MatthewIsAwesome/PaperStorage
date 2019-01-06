@@ -12,10 +12,13 @@
 - [x] Folder Structure
 - [x] Start Work on Encode
 - [x] Command Line based -s on Encode
-- [ ] Sort data
-- [ ] Encode to image
+- [x] Sort data
+- [x] Encode to images
+- [ ] Save images
 - [ ] Send to print
 - [ ] Finish Encode
-- [ ] Start work on Decode
+- [x] Start work on Decode
 - [ ] Accurately find squares
+- [ ] Find binary from images
+- [ ] Turn binary into file
 - [ ] Create GUI

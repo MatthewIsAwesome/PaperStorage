@@ -66,3 +66,6 @@ try:
 except IndexError:
     print("ERROR: Missing argument for a tag.")
     sys.exit(0)
+
+print("path: "+path) # DEBUG
+print("output path: "+outpath) # DEBUG
