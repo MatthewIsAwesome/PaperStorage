@@ -10,7 +10,9 @@
 
 $usage = '
 
+modes 1 append save the files into a single file to print elsewhere
 
+mode 2 start direct printing this can be problematic if on a odd network arrangement 
 
 
 '
@@ -22,4 +24,6 @@ $printname | Set-PrintConfiguration -DuplexingMode TwoSidedLongEdge
 
 echo "Found $($printname) as default printer"
 if($confirm -ne 1){throw 'Exiting to continue set the flag -confirm to 1'}
+
+
  
