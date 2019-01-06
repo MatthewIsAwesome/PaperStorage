@@ -83,14 +83,15 @@ except IndexError:
     print("ERROR: Missing argument for a tag.")
     sys.exit(0)
 
-print("path: "+path) # DEBUG
-print("output path: "+outpath) # DEBUG
+# DEBUG: print("path: "+path) # DEBUG
+# DEBUG: print("output path: "+outpath) # DEBUG
+print(width+height)
 
 ## ACTUALLY RUNNING IT
 e = export.exporter(outpath)
 
 try:
-    e.imagedimensions = (width, height)
+    e.imagedimensions = (int(width), int(height))
 except error:
     print("INFO: using default size for output")
 

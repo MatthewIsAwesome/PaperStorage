@@ -15,7 +15,9 @@ class exporter(object):
         self.black = (0, 0, 0)
         self.white = (255, 255, 255)
 
-    def makeTable(self, binaryString, width=self.imagedimensions[0], height=self.imagedimensions[1]):
+    def makeTable(self, binaryString):
+        width=self.imagedimensions[0]
+        height=self.imagedimensions[1]
         self.binaryString = binaryString
         table = tuple()
 
