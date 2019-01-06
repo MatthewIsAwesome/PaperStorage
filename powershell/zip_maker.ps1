@@ -45,3 +45,6 @@ echo $Results
 
 $Results | Export-Csv -Confirm -Force -Delimiter % -Path $PSScriptRoot\CSV\results.csv
 $maxsize | Out-File  -Path $PSScriptRoot\tmp\maxlen.ini -Force
+
+
+
