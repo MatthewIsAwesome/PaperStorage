@@ -41,6 +41,8 @@ currentArg = 0
 nextArg = currentArg + 1
 path = None
 outpath = None
+width = 400, 574
+
 try:
     for arg in args:
         # DEBUG: print("current arg is {} at position {}".format(arg, currentArg)) # DEBUG
@@ -63,6 +65,7 @@ try:
 
                 if arg == "height":
                     height = args[nextArg]
+
             else:
                 if arg == "p":
                     path = args[nextArg]
@@ -90,10 +93,7 @@ except IndexError:
 ## ACTUALLY RUNNING IT
 e = export.exporter(outpath)
 
-try:
-    e.imagedimensions = (int(width), int(height))
-except error:
-    print("INFO: using default size for output")
+e.imagedimensions = (int(width), int(height))
 
 while e.outOfData == False:
     e.makeImg(e.makeBinary(path))
