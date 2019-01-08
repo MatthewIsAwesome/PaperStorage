@@ -35,7 +35,6 @@ if($mode -eq 2){
     Get-ChildItem -Path $imginp | ForEach-Object{
         $content = Get-Content
         $content | Out-Printer
-        $outnum += 1
         Start-Sleep -Milliseconds 10
     }
 
