@@ -24,6 +24,8 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes
 
 '
 
+$outpath = '..\\..\\encode\\in\\in.zip'
+
 if($bitforbitsplit -eq 0){
     $bitlog = 'groupmode'
 }else{
@@ -60,5 +62,3 @@ if($bitforbitsplit -eq 1){
     $Results | Export-Csv -Confirm -Force -Delimiter % -Path $PSScriptRoot\CSV\results.csv
     $maxsize | Out-File  -Path $PSScriptRoot\tmp\maxlen.ini -Force
     }
-
-

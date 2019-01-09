@@ -39,8 +39,8 @@ args = sys.argv
 # DEBUG: print(args)
 currentArg = 0
 nextArg = currentArg + 1
-path = None
-outpath = None
+path = ".\\in\\in.zip"
+outpath = ".\\out\\"
 width = 400, 574
 
 try:
@@ -80,8 +80,6 @@ try:
                     height = args[nextArg]
         currentArg += 1
         nextArg = currentArg + 1
-    if outpath == None or path == None:
-        raise IndexError # This isn't ideal but I don't want the program continueing if there missing args
 except IndexError:
     print("ERROR: Missing argument for a tag.")
     sys.exit(0)
