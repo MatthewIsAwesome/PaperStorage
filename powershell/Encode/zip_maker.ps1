@@ -4,12 +4,9 @@
     [string]$path,
 
     [Parameter(Mandatory=$true)]
-    [string]$outpath,
-
-    [Parameter(Mandatory=$true)]
     [int32]$maxsize,
 
-    [Parameter(Mandatory=$false)]
+    [Parameter(Mandatory=$true)]
     [int32]$bitforbitsplit,
 
     [switch]$debugger
@@ -24,7 +21,7 @@ zip_maker.ps1 -path[input path] -outpath[output path] -maxsize[zip size in Bytes
 
 '
 
-$outpath = '..\\..\\encode\\in\\in.zip'
+if($bitforbitsplit -ne 0 -or 1 ){throw 'Bit for bit split needs to be set to zero (encode all) or one (split file zips (Currently broken))'}
 
 if($bitforbitsplit -eq 0){
     $bitlog = 'groupmode'
@@ -39,7 +36,7 @@ Remove-Item $PSScriptRoot\tmp\mode.ini -Force -ErrorAction SilentlyContinue
 $array = @()
 
 if($bitforbitsplit -eq 1){
-    Compress-Archive -DestinationPath $outpath -Path $path -CompressionLevel Optimal -Confirm
+    Compress-Archive -DestinationPath ..\encode\in\pszip -Path $path -CompressionLevel Optimal -Confirm
     $bitlog | Out-File -FilePath $PSScriptRoot\tmp\mode.ini
     echo 'File Compression Finished‽'
 }else{
@@ -60,5 +57,5 @@ if($bitforbitsplit -eq 1){
     echo $Results
 
     $Results | Export-Csv -Confirm -Force -Delimiter % -Path $PSScriptRoot\CSV\results.csv
-    $maxsize | Out-File  -Path $PSScriptRoot\tmp\maxlen.ini -Force
+    $maxsize | Out-File -Path $PSScriptRoot\tmp\maxlen.ini -Force
     }
