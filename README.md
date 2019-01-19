@@ -9,4 +9,4 @@ Python 3.X (Built in 3.6)
 
 Powershell
 
-Plenty of available RAM
+Enough RAM to fulfill the entire file you are converting (temporary)
