@@ -49,7 +49,7 @@ While($true){
         $decodeclick = 0
         }       
     if($once -eq 1){
-        $Window.ShowDialog()
+        
         $once = 0
         }
     
