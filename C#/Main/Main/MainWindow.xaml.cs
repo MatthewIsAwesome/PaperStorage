@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Threading;
 
 namespace Main
 {
@@ -40,6 +32,19 @@ namespace Main
         {
             this.InputBox.Text = this.OutputBox.Text =  "";
             this.WidthBox.Text = this.HeightBox.Text = "1000";
+        }
+
+        private void File_Click(object sender, RoutedEventArgs e)
+        {
+            var myFolderBrowserDialog = new FolderBrowserDialog();
+            Thread t = new Thread(() => myFolderBrowserDialog.ShowDialog());
+            t.IsBackground = true;
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            var path = myFolderBrowserDialog.SelectedPath;
+            var send = ((Button)sender).Name;
         }
     }
 }
