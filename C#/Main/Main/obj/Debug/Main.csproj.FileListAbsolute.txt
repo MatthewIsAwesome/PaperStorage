@@ -1,0 +1,14 @@
+D:\Programming\Paper\C#\Main\Main\bin\Debug\Main.exe.config
+D:\Programming\Paper\C#\Main\Main\bin\Debug\Main.exe
+D:\Programming\Paper\C#\Main\Main\bin\Debug\Main.pdb
+D:\Programming\Paper\C#\Main\Main\obj\Debug\Main.csprojAssemblyReference.cache
+D:\Programming\Paper\C#\Main\Main\obj\Debug\MainWindow.g.cs
+D:\Programming\Paper\C#\Main\Main\obj\Debug\App.g.cs
+D:\Programming\Paper\C#\Main\Main\obj\Debug\Main_MarkupCompile.cache
+D:\Programming\Paper\C#\Main\Main\obj\Debug\Main_MarkupCompile.lref
+D:\Programming\Paper\C#\Main\Main\obj\Debug\MainWindow.baml
+D:\Programming\Paper\C#\Main\Main\obj\Debug\Main.g.resources
+D:\Programming\Paper\C#\Main\Main\obj\Debug\Main.Properties.Resources.resources
+D:\Programming\Paper\C#\Main\Main\obj\Debug\Main.csproj.GenerateResource.cache
+D:\Programming\Paper\C#\Main\Main\obj\Debug\Main.exe
+D:\Programming\Paper\C#\Main\Main\obj\Debug\Main.pdb
