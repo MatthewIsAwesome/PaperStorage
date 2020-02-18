@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Main"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Paper Storage" Height="330" Width="300">
+    <Border Padding="5" BorderThickness="1" >
+        <StackPanel>
+            <!-- Alt text-->
+            <TextBlock TextWrapping="Wrap" FontSize="12" Text="This is the GUI for Paper Storage select from the options below to store files in the form of images."/>
+            <!-- Input -->
+            <TextBlock  TextWrapping="Wrap" FontSize="15" Padding="0 10 0 0" Text="Input Path:"/>
+            <TextBox/>
+            <!-- Output -->
+            <TextBlock TextWrapping="Wrap" FontSize="15" Padding="0 10 0 0" Text="Output Path:"/>
+            <TextBox Margin="0 0 0 15"/>
+            <!-- Advanced Options -->
+            <CheckBox x:Name="AdvancedEnable" Unchecked="AdvancedEnable_Unchecked" Checked="AdvancedEnable_Checked" Content="Advanced Options"  />
+            <!-- Options-->
+            <TextBlock TextWrapping="Wrap" FontSize="15" Padding="0 1 0 0" Text="Height:" />
+            <TextBox x:Name="HeightBox" IsEnabled="False" Text="1000"/>
+            <TextBlock TextWrapping="Wrap" FontSize="15" Padding="0 10 0 0" Text="Width:" />
+            <TextBox x:Name="WidthBox" IsEnabled="False" Text="1000"/>
+            <!-- Buttons -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Reset" Grid.Column="0" Content="Reset" Margin="0 10 10 0" />
+                <Button x:Name="Verify" Grid.Column="1" Content="Verify" Margin="0 10 0 0" />
+                <Button x:Name="Start" Grid.Column="2" Content="Start" Margin="10 10 0 0" />
+            </Grid>
+        </StackPanel>
+    </Border>        
 </Window>

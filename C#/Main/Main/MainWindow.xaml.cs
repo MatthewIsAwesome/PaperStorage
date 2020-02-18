@@ -24,5 +24,16 @@ namespace Main
         {
             InitializeComponent();
         }
+
+        private void AdvancedEnable_Checked(object sender, RoutedEventArgs e)
+        {
+            this.WidthBox.IsEnabled = this.HeightBox.IsEnabled = true;
+        }
+
+        private void AdvancedEnable_Unchecked(object sender, RoutedEventArgs e)
+        {
+            this.WidthBox.IsEnabled = this.HeightBox.IsEnabled = false;
+            this.WidthBox.Text = this.HeightBox.Text = "1000";
+        }
     }
 }
