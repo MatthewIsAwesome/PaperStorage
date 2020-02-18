@@ -35,5 +35,11 @@ namespace Main
             this.WidthBox.IsEnabled = this.HeightBox.IsEnabled = false;
             this.WidthBox.Text = this.HeightBox.Text = "1000";
         }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            this.InputBox.Text = this.OutputBox.Text =  "";
+            this.WidthBox.Text = this.HeightBox.Text = "1000";
+        }
     }
 }

@@ -12,10 +12,10 @@
             <TextBlock TextWrapping="Wrap" FontSize="12" Text="This is the GUI for Paper Storage select from the options below to store files in the form of images."/>
             <!-- Input -->
             <TextBlock  TextWrapping="Wrap" FontSize="15" Padding="0 10 0 0" Text="Input Path:"/>
-            <TextBox/>
+            <TextBox x:Name="InputBox"/>
             <!-- Output -->
             <TextBlock TextWrapping="Wrap" FontSize="15" Padding="0 10 0 0" Text="Output Path:"/>
-            <TextBox Margin="0 0 0 15"/>
+            <TextBox Margin="0 0 0 15" Name="OutputBox"/>
             <!-- Advanced Options -->
             <CheckBox x:Name="AdvancedEnable" Unchecked="AdvancedEnable_Unchecked" Checked="AdvancedEnable_Checked" Content="Advanced Options"  />
             <!-- Options-->
@@ -30,7 +30,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Reset" Grid.Column="0" Content="Reset" Margin="0 10 10 0" />
+                <Button x:Name="Reset" Click="Reset_Click" Grid.Column="0" Content="Reset" Margin="0 10 10 0" />
                 <Button x:Name="Verify" Grid.Column="1" Content="Verify" Margin="0 10 0 0" />
                 <Button x:Name="Start" Grid.Column="2" Content="Start" Margin="10 10 0 0" />
             </Grid>
