@@ -1,0 +1,14 @@
+D:\Programming\Paper\C#\Main\Main\bin\Release\Main.exe.config
+D:\Programming\Paper\C#\Main\Main\bin\Release\Main.exe
+D:\Programming\Paper\C#\Main\Main\bin\Release\Main.pdb
+D:\Programming\Paper\C#\Main\Main\obj\Release\Main.csprojAssemblyReference.cache
+D:\Programming\Paper\C#\Main\Main\obj\Release\MainWindow.g.cs
+D:\Programming\Paper\C#\Main\Main\obj\Release\App.g.cs
+D:\Programming\Paper\C#\Main\Main\obj\Release\Main_MarkupCompile.cache
+D:\Programming\Paper\C#\Main\Main\obj\Release\Main_MarkupCompile.lref
+D:\Programming\Paper\C#\Main\Main\obj\Release\MainWindow.baml
+D:\Programming\Paper\C#\Main\Main\obj\Release\Main.g.resources
+D:\Programming\Paper\C#\Main\Main\obj\Release\Main.Properties.Resources.resources
+D:\Programming\Paper\C#\Main\Main\obj\Release\Main.csproj.GenerateResource.cache
+D:\Programming\Paper\C#\Main\Main\obj\Release\Main.exe
+D:\Programming\Paper\C#\Main\Main\obj\Release\Main.pdb

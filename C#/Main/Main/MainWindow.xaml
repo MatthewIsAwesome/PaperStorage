@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Main"
         mc:Ignorable="d"
-        Title="Paper Storage" Height="330" Width="300">
+        Title="Paper Storage" Height="370" Width="300">
     <Border Padding="5" BorderThickness="1" >
         <StackPanel>
             <!-- Alt text-->
@@ -18,16 +18,17 @@
                     <ColumnDefinition Width=".07*"/>
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Row="0" x:Name="InputBox"/>
-                <Button Grid.Column="1" x:Name="InputButton" Content="···" Click="File_Click"/>
+                <Button Grid.Column="1" x:Name="InputButton" Content="···" Click="InputButton_Click"/>
             </Grid>
             <!-- Output -->
             <TextBlock TextWrapping="Wrap" FontSize="15" Padding="0 10 0 0" Text="Output Path:"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".94*"/>
-                    <ColumnDefinition Width=".07*"/>                </Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".07*"/>
+                </Grid.ColumnDefinitions>
                 <TextBox Margin="0 0 0 15" Name="OutputBox" Grid.Column="0"/>
-                <Button Grid.Column="1" x:Name="OutputButton" Content="···" VerticalAlignment="Top" Margin="0,0,0,15" Click="File_Click"/>
+                <Button Grid.Column="1" x:Name="OutputButton" Content="···" VerticalAlignment="Top" Margin="0,0,0,15" Click="OutputButton_Click"/>
             </Grid>
             <!-- Advanced Options -->
             <CheckBox x:Name="AdvancedEnable" Unchecked="AdvancedEnable_Unchecked" Checked="AdvancedEnable_Checked" Content="Advanced Options"  />
@@ -41,12 +42,13 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Reset" Click="Reset_Click" Grid.Column="0" Content="Reset" Margin="0 10 10 0" />
-                <Button x:Name="Verify" Grid.Column="1" Content="Verify" Margin="0 10 0 0" />
-                <Button x:Name="Start" Grid.Column="2" Content="Start" Margin="10 10 0 0" />
+                <Button x:Name="Reset" Click="Reset_Click" Grid.Column="0" Content="Reset" Margin="0 10 5 0" />
+                <Button x:Name="Start" Click="Start_Click" Grid.Column="1" Content="Start" Margin="5 10 0 0" />
             </Grid>
+            <Border Margin="0 10 0 0" BorderBrush="#D0D1D4" BorderThickness="1">
+                <TextBlock Foreground="#D0D1D4" Padding="2 2 0 3" TextWrapping="Wrap" VerticalAlignment="Center" Text="Output" x:Name="Output"/>
+            </Border>
         </StackPanel>
     </Border>        
 </Window>
