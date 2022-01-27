@@ -1,5 +1,7 @@
 # PaperStorage
 
+This repository is now archived since the project wasn't completed. You can still try running the encoding files to see how images are converted to a binary view.
+
 A system to encode files to paper and then decode them with a scanner
 
 ## System requirements
